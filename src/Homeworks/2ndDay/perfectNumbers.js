@@ -18,4 +18,4 @@ for (let i = 1; i < 1000; i++) {
     }
 }
 
-console.log(perfectNumbers)
+console.log("Perfect Numbers: " + perfectNumbers)
