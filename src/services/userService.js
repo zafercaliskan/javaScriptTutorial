@@ -1,14 +1,21 @@
 export default class UserService { //export: dışarıdan import edilebileceği anlamına gelir. 
     //default: js firebase olduğu için userService.js import ettiğimde bu class'ı import et demek.
-    add() {
-        console.log("kullanıcı eklendi")
+
+    constructor(loggerService) {
+        this.users = []
+        this.loggerService = loggerService
+    }
+
+    add(user) {
+        this.users.push(user)
+        this.loggerService.log(user)
     }
 
     list() {
-        console.log("kullanıcılar listelendi")
+        return this.users
     }
 
-    getById() {
-        console.log("kullanıcı listelendi")
+    getById(id) {
+        return this.users.find(u => u.id === id)
     }
 }
